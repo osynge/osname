@@ -3,14 +3,13 @@ name = "ossmime"
 version = "0.1.0"
 authors = ["Owen Synge <owen.synge@jaysnest.de>"]
 links = "ssl"
-build = "build.rs"
+
 
 [dependencies]
 libc = "0.2.0"
 ffi = "0.0.2"
 
+
 [lib]
 name = "osnamelib"
 crate-type = ["dylib"]
-
-
