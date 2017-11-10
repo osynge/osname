@@ -27,7 +27,7 @@ components of the build are isolated and reusable.
 #
 %prep
 %setup -q -n @PACKAGE@-@VERSION@
-
+./autogen.sh
 ./configure  \
     --prefix=%{prefix} \
     --bindir=%{_bindir} \

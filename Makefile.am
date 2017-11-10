@@ -44,6 +44,8 @@ dist-hook:
 	  cp $$file $(distdir)/$$file; \
 	done
 
+build_DATA = \
+    autogen.sh
 
 
 
@@ -54,7 +56,7 @@ elekickerdoc_DATA = \
 	ChangeLog\
 	INSTALL
 
-EXTRA_DIST =  $(elekickerdoc_DATA)
+EXTRA_DIST =  $(elekickerdoc_DATA) $(build_DATA)
 
 
 
