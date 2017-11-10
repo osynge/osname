@@ -1,0 +1,80 @@
+Summary:  whenenv removes branching in shell scripts typical use might be running jenkins matrix builds.
+Name: lib@PACKAGE@
+Version: @VERSION@
+Release: 1
+License:	LGPL-2.0
+Group: Build/Automation
+Prefix: @SPEC_PREFIX@
+URL: http://yokel.org
+Source: http://yokel.org/@PACKAGE@-@VERSION@.tar.xz
+BuildRoot: %{_tmppath}/%{name}-root
+%description -n lib@PACKAGE@
+whenenv is designed to keep the branching involved in build and
+functional test scripts from growing out of control.
+
+You specify a list of environment variables and whenenv will then
+try and reuse existing scrimps to process the request.
+
+If it fails to find suitable scripts you should specify some minium script.
+
+When launching whenenv, always specify the PRODUCT environment variable. The
+components of the build are isolated and reusable.
+
+
+
+#
+# Prep
+#
+%prep
+%setup -q -n @PACKAGE@-@VERSION@
+
+./configure  \
+    --prefix=%{prefix} \
+    --bindir=%{_bindir} \
+    --libdir=%{_libdir} \
+    --docdir=%{prefix}/doc/@PACKAGE@ \
+    --with-git-hash=@GIT_HASH@ \
+    --with-job-dir=%{prefix}/@jobdir@/ \
+    --with-shell-dir=%{prefix}/@shelldir@/ \
+    @SPEC_CONFIG@
+#
+# Build
+#
+%build
+make
+#
+# Install
+#
+%install
+
+if [ -d $RPM_BUILD_ROOT ]; then rm -rf $RPM_BUILD_ROOT; fi
+mkdir -p $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+#
+# Script sections (Try to avoid them in Testbed 1 context)
+#
+%post
+%preun
+%postun
+
+
+
+%defattr (-,root,root)
+
+%files
+%{_libdir}/libosnamelib.so
+
+
+
+%doc
+%{prefix}/doc/@PACKAGE@/AUTHORS
+%{prefix}/doc/@PACKAGE@/COPYING
+%{prefix}/doc/@PACKAGE@/ChangeLog
+%{prefix}/doc/@PACKAGE@/INSTALL
+
+
+%changelog
