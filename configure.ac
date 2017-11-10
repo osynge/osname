@@ -165,16 +165,13 @@ AC_CONFIG_MACRO_DIRS([m4])
 
 
 AC_CONFIG_FILES([
-  osname.spec
-  src/rust/Cargo.toml
-  src/rust/src/autoconf.rs
-])
+    Makefile
+    osname.spec
+    src/Makefile
+    src/rust/Cargo.toml
+    src/rust/Makefile
+    src/rust/src/autoconf.rs
 
-
-AC_CONFIG_FILES([
-  Makefile
-  src/Makefile
-  src/rust/Makefile
 ])
 AC_OUTPUT
 
