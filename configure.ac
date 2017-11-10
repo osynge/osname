@@ -164,6 +164,8 @@ AC_SUBST(ac_aux_dir)
 AC_CONFIG_MACRO_DIRS([m4])
 
 
+AM_CONFIG_HEADER(src/c/config.h)
+
 AC_CONFIG_FILES([
     Makefile
     osname.spec
@@ -171,8 +173,5 @@ AC_CONFIG_FILES([
     src/rust/Cargo.toml
     src/rust/Makefile
     src/rust/src/autoconf.rs
-
 ])
 AC_OUTPUT
-
-AM_CONFIG_HEADER(src/c/config.h)
