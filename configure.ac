@@ -1,6 +1,6 @@
 AC_PREREQ([2.60])
 
-AC_INIT([rust_link_clib_example], [0.0.1])
+AC_INIT([rust_link_clib_example], [0.1.0])
 AM_INIT_AUTOMAKE([1.6 foreign subdir-objects])
 m4_ifdef([AM_SILENT_RULES], [
     AM_SILENT_RULES([yes])
