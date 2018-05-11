@@ -16,10 +16,10 @@ clean-local:
 
 install-exec-local:
 	$(MKDIR_P) $(DESTDIR)$(libdir)
-	$(INSTALL) -c -m 755 target/@CARGO_TARGET_DIR@/libosnamelib.so $(DESTDIR)$(libdir)
+	$(INSTALL) -c -m 755 target/@CARGO_TARGET_DIR@/librust_link_clib_example.so $(DESTDIR)$(libdir)
 
-DISTCLEANFILES =                                \
-	$(desktop_files)                        \
+DISTCLEANFILES = \
+	$(desktop_files) \
 	$(null)
 
 

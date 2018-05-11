@@ -1,5 +1,5 @@
 [package]
-name = "ossmime"
+name = "rust_link_clib_example"
 version = "0.1.0"
 authors = ["Owen Synge <owen.synge@jaysnest.de>"]
 links = "ssl"
@@ -11,5 +11,5 @@ ffi = "0.0.2"
 
 
 [lib]
-name = "osnamelib"
+name = "rust_link_clib_example"
 crate-type = ["dylib"]

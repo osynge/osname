@@ -1,6 +1,6 @@
 AC_PREREQ([2.60])
 
-AC_INIT([osname], [0.0.1])
+AC_INIT([rust_link_clib_example], [0.0.1])
 AM_INIT_AUTOMAKE([1.6 foreign subdir-objects])
 m4_ifdef([AM_SILENT_RULES], [
     AM_SILENT_RULES([yes])
@@ -168,7 +168,7 @@ AM_CONFIG_HEADER(src/c/config.h)
 
 AC_CONFIG_FILES([
     Makefile
-    osname.spec
+    rust_link_clib_example.spec
     src/Makefile
     src/rust/Cargo.toml
     src/rust/Makefile
